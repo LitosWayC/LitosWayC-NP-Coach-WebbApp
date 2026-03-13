@@ -1,0 +1,125 @@
+Add a full admin system to NP Coach.
+
+GOAL:
+Allow the developer to test the app without any restrictions and manage the platform.
+
+-----------------------------------
+
+1. DATABASE UPDATE
+
+Update the users table to include a role field.
+
+Example:
+
+role: "student" | "admin"
+
+Default role should be:
+student
+
+-----------------------------------
+
+2. CREATE ADMIN ACCOUNT
+
+If a user signs up with the email:
+
+Carliitos_@hotmail.com
+
+Automatically assign:
+
+role = "admin"
+
+All other users should default to:
+
+role = "student"
+
+-----------------------------------
+
+3. ADMIN OVERRIDE MODE
+
+If role === "admin":
+
+Disable all limits including:
+
+- daily quiz limits
+- free user restrictions
+- premium paywalls
+- quiz attempt limits
+
+Admins should be able to:
+
+- start unlimited quizzes
+- retake quizzes instantly
+- access all subjects
+- access premium features
+- test all functionality
+
+-----------------------------------
+
+4. ADMIN PANEL
+
+Create a protected route:
+
+/admin
+
+Only users with role = "admin" can access it.
+
+Admin panel features:
+
+Question management:
+- add question
+- edit question
+- delete question
+- assign subject
+- assign topic
+- assign difficulty (E, C, A)
+
+Question fields:
+
+question
+options
+correctAnswer
+explanation
+subject
+topic
+difficulty
+
+-----------------------------------
+
+5. ADMIN USER MANAGEMENT
+
+In the admin panel add:
+
+User management section.
+
+Admins can:
+
+- view all users
+- see email
+- see role
+- change role (student/admin)
+
+-----------------------------------
+
+6. ADMIN BADGE
+
+If the user is admin display:
+
+"Admin Mode"
+
+somewhere in the UI so it is clear the app is in testing mode.
+
+-----------------------------------
+
+7. SECURITY
+
+Non-admin users must NOT be able to:
+
+- access /admin
+- edit questions
+- bypass limits
+
+-----------------------------------
+
+IMPORTANT:
+
+Admin users should always be able to test the full platform without needing to reset progress.

@@ -1,0 +1,118 @@
+I want you to build a scalable full-stack web application called "NP Coach".
+
+Goal:
+NP Coach helps Swedish students prepare for national exams. 
+Version 1 will focus only on: Matematik Åk 9.
+However, the architecture must support multiple subjects and grades in the future.
+
+TECH STACK:
+- Frontend: React (clean, modern, minimal UI)
+- Backend: Node.js + Express
+- Database: JSON file or lightweight database (structured for scalability)
+- Mobile responsive
+- All UI text must be in Swedish
+
+APP STRUCTURE REQUIREMENTS:
+
+The system must be built using this hierarchy:
+
+Subject
+  -> Grade
+     -> Test
+        -> Questions
+
+Even if we only implement:
+- Subject: Matematik
+- Grade: Åk 9
+
+The structure must allow easy addition of:
+- Svenska
+- Engelska
+- Other grades
+
+CORE FEATURES (MVP):
+
+1. Landing Page
+- Headline: "Klara Nationella Provet med NP Coach"
+- Subtext explaining math focus
+- Button: "Börja träna"
+- Button: "Logga in"
+
+2. Authentication
+- Email + password signup/login
+- Store user progress and test results
+
+3. Subject Selection Page
+For now only:
+- Matematik Åk 9 (clickable card)
+
+4. Practice Test Mode
+- 20 questions per test
+- Mix of:
+   - Algebra
+   - Procent
+   - Geometri
+   - Problemlösning
+- Question types:
+   - Multiple choice
+   - Numeric input
+- Timer (simulate exam)
+- Show progress (Fråga 5 av 20)
+
+5. Auto Correction System
+After finishing:
+- Show total score
+- Show correct/incorrect per question
+- Show detailed step-by-step explanation in Swedish
+
+6. Level Indicator
+Based on score:
+0–9 → Risk F
+10–13 → E-nivå
+14–16 → C-nivå
+17–20 → A/B-nivå
+
+7. Student Dashboard
+Show:
+- Number of completed tests
+- Average score
+- Latest level
+- Simple progress chart
+
+8. Question Data File
+
+Create a structured question database like:
+
+{
+  "subject": "Matematik",
+  "grade": "Åk 9",
+  "questions": [
+    {
+      "question": "...",
+      "type": "multiple_choice" or "numeric",
+      "options": [],
+      "correctAnswer": "...",
+      "explanation": "Step by step explanation in Swedish",
+      "topic": "Algebra/Procent/Geometri/Problemlösning"
+    }
+  ]
+}
+
+Preload at least 40 realistic math questions in Swedish suitable for NP level.
+
+IMPORTANT:
+
+- Write clean and organized code.
+- Separate frontend and backend clearly.
+- Make the structure scalable for future:
+   - Payment integration
+   - AI feedback integration
+   - Multiple subjects
+- Comment the code clearly so a beginner can understand it.
+
+After building:
+
+1. Explain how to run the project locally.
+2. Explain how to deploy it.
+3. Explain how to add new subjects later.
+4. Explain how to add a payment wall later.
